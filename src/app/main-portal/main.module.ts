@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { MainPage } from './main-page/main.page';
+import { AppsGridComponent } from './components/apps-grid/apps-grid.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [MainPage]
+  declarations: [MainPage, AppsGridComponent]
 })
 export class MainPageModule {}
