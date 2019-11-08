@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import { UserPopoverComponent } from 'src/app/components/user-popover/user-popover.component';
 
@@ -9,6 +9,7 @@ import { UserPopoverComponent } from 'src/app/components/user-popover/user-popov
 })
 export class HeaderComponent implements OnInit {
 
+  @Input() user:any;
   constructor(private popoverController:PopoverController) { }
 
   ngOnInit() {}
@@ -17,7 +18,13 @@ export class HeaderComponent implements OnInit {
     const popover = await this.popoverController.create({
       component: UserPopoverComponent,
       event: ev,
-      translucent: true
+      translucent: true,
+      animated: true,
+      showBackdrop: true,
+      componentProps: {
+        'user': this.user
+      },
+      cssClass: 'user-popover'
     });
     return await popover.present();
 }

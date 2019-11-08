@@ -10,6 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { UserPopoverComponent } from './components/user-popover/user-popover.component';
+import { UserService } from './services/user/user.service';
+import { AuthService } from './services/auth/auth.service';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, UserPopoverComponent],
@@ -18,7 +20,9 @@ import { UserPopoverComponent } from './components/user-popover/user-popover.com
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    AuthService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
