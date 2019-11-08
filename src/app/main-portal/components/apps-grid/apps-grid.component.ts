@@ -7,8 +7,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppsGridComponent implements OnInit {
 
-  constructor() { }
+  apps:any;
+  constructor() { 
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.apps = [
+      {
+        app: 'tree-keepers',
+        title: 'שומרי העצים',
+        logo: 'tree-keepers.jpg',
+        route: 'tree-keepers'
+      },
+      {
+        app: 'planting-events',
+        title: 'אירועי נטיעות',
+        logo: 'planting-logo.jpg',
+        route: 'planting-events'
+      },
+      {
+        app: 'tidings',
+        title: 'בשורות',
+        logo: 'tidings.jpg',
+        route: 'tidings'
+      },
+      {
+        app: 'forestore',
+        title: 'חנות היער',
+        logo: 'forestore.jpg',
+        route: 'forestore'
+      },
+      {
+        app: 'courses',
+        title: 'כיתת היער',
+        logo: 'courses.jpg',
+        route: 'courses'
+      },
+    ];
+  }
 
 }
