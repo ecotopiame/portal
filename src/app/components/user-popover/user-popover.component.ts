@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
-import { UserService } from 'src/app/services/user/user.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'user-popover',
@@ -9,7 +9,7 @@ import { UserService } from 'src/app/services/user/user.service';
 })
 export class UserPopoverComponent implements OnInit {
 
-  constructor(private popoverController:PopoverController, private userService: UserService) { 
+  constructor(private popoverController:PopoverController, private authService: AuthService) { 
   }
 
   ngOnInit() {

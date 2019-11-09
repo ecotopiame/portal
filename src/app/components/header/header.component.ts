@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import { UserPopoverComponent } from 'src/app/components/user-popover/user-popover.component';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-header',
@@ -9,8 +10,13 @@ import { UserPopoverComponent } from 'src/app/components/user-popover/user-popov
 })
 export class HeaderComponent implements OnInit {
 
-  @Input() user:any;
-  constructor(private popoverController:PopoverController) { }
+  user:any;
+  constructor(private popoverController:PopoverController,
+    private afAuth: AngularFireAuth) {
+      this.afAuth.user.subscribe((data)=> {
+        this.user = data;
+      })
+    }
 
   ngOnInit() {}
   

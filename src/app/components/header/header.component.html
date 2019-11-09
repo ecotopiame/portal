@@ -1,5 +1,5 @@
 <ion-header translucent>
-    <ion-toolbar>
+    <ion-toolbar *ngIf="this.user">
         <ion-buttons slot="start">
             <ion-button [routerLink]="['']" >
                <ion-icon slot="icon-only" name="home"></ion-icon>
@@ -8,7 +8,7 @@
       <ion-buttons slot="end">
           <ion-button>
           <ion-avatar class="user-avatar" (click)="presentUserPopover($event)">
-              <img [src]="this.user.avatar">
+              <img [src]="this.user.photoURL">
             </ion-avatar>
           </ion-button>
       </ion-buttons>
