@@ -15,7 +15,8 @@ const routes: Routes = [
   {
     path: 'login', loadChildren: './login/login.module#LoginPageModule',
     canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectLoggedInToMain }
-  }
+  },
+    { path: 'tree-keepers', loadChildren: './tree-keepers/tree-keepers.module#TreeKeepersPageModule' },
 ];
 @NgModule({
   imports: [
