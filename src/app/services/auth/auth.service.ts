@@ -1,25 +1,25 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase';
-import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(public afAuth: AngularFireAuth, private router: Router) { }
+  constructor(public afAuth: AngularFireAuth, private navController: NavController) { }
 
   
   login() {
     this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider()).then(()=>{
-      this.router.navigate(['']);
+      this.navController.navigateRoot(['']);
     });
   }
 
   logout() {
     this.afAuth.auth.signOut().then(()=>{
-      this.router.navigate(['login'])
+      this.navController.navigateRoot(['login'])
     });
 
   }
