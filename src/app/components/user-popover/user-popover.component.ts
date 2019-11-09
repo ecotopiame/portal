@@ -14,6 +14,10 @@ export class UserPopoverComponent implements OnInit {
 
   ngOnInit() {
   }
+  logout(){
+    this.popoverController.dismiss(this)
+    this.authService.logout()
+  }
 
   dismissPopover() {
     this.popoverController.dismiss(this)
