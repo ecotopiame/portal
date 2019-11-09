@@ -17,6 +17,7 @@ import { UserPopoverComponent } from './components/user-popover/user-popover.com
 import { UserService } from './services/user/user.service';
 import { AuthService } from './services/auth/auth.service';
 import { environment } from 'src/environments/environment';
+import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, UserPopoverComponent],
@@ -34,6 +35,7 @@ import { environment } from 'src/environments/environment';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    AngularFireAuthGuard,
     AuthService,
     UserService
   ],
