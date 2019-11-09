@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-main',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPage implements OnInit {
 
-  constructor() { }
+  updates: Observable<any>
+  constructor(db: AngularFirestore) { 
+    this.updates = db.collection('app-news-updates').valueChanges();
+  }
 
   ngOnInit() {
   }

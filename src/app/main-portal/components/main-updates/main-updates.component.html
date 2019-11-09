@@ -1,0 +1,6 @@
+<ion-list class="updates-list" dir="rtl">
+    <ion-item class="text" *ngFor="let update of updates | async">
+<ion-label>{{update.title}}</ion-label>
+<p>{{update.content}}</p>
+    </ion-item>
+</ion-list>

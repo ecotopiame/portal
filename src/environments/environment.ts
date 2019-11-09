@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyAnBydZDUBeOQfjwX-QIXdKtiZ69qkLP2I",
+    authDomain: "ecotopia.firebaseapp.com",
+    databaseURL: "https://ecotopia.firebaseio.com",
+    projectId: "ecotopia",
+    storageBucket: "ecotopia.appspot.com",
+    messagingSenderId: "147409737017",
+    appId: "1:147409737017:web:1e6267eadeac7f5133c4e8",
+    measurementId: "G-WWSCMHNVV7"
+  }
 };
 
 /*

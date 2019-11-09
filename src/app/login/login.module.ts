@@ -5,14 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MainPage } from './main-page/main.page';
-import { AppsGridComponent } from './components/apps-grid/apps-grid.component';
-import { MainUpdatesComponent } from './components/main-updates/main-updates.component';
+import { LoginPage } from './login.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: MainPage
+    component: LoginPage
   }
 ];
 
@@ -23,6 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [MainPage, AppsGridComponent, MainUpdatesComponent]
+  declarations: [LoginPage]
 })
-export class MainPageModule {}
+export class LoginPageModule {}
